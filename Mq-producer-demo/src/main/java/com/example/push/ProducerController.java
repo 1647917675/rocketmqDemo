@@ -9,6 +9,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.rocketmq.client.exception.MQBrokerException;
@@ -19,6 +20,7 @@ import com.alibaba.rocketmq.common.message.Message;
 import com.alibaba.rocketmq.remoting.exception.RemotingException;
 
 @RestController
+@RequestMapping("/MessagePush")
 public class ProducerController {
 
 	private Logger Log = LoggerFactory.getLogger(ProducerController.class);
@@ -33,6 +35,7 @@ public class ProducerController {
 	 * @param message
 	 * @return
 	 */
+	@RequestMapping(path={"/sendMessage"},params={"message"})
 	public boolean sendMessage(Message message){
 		SendResult sendResult = null;
 		try {
