@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,15 @@ public class ProducerController {
 		}
 		//这里处理失败了可以自己定义实现，自己去去处理数据，是重新发送还是其他的
 		return handler.handerMessage(sendResult);
+	}
+	
+	@RequestMapping("/getMessage")
+	public String getMessage(){
+		return "hello";
+	}
+	
+	@RequestMapping(path={"/insert"},params={"object"})
+	public String insertOne(Object object){
+		return ToStringBuilder.reflectionToString(object);
 	}
 }
