@@ -65,4 +65,9 @@ public class ProducerController {
 		
 		return ToStringBuilder.reflectionToString(object);
 	}
+	
+	public Logger getLog() {
+		return Log;
+	}
+	
 }
