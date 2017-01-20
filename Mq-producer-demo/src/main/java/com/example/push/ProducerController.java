@@ -2,9 +2,6 @@ package com.example.push;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.concurrent.LinkedBlockingDeque;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.slf4j.Logger;
@@ -55,8 +52,17 @@ public class ProducerController {
 		return "hello";
 	}
 	
+	/**
+	 * used to save the one data
+	 * 
+	 * 
+	 * 
+	 * @param object
+	 * @return
+	 */
 	@RequestMapping(path={"/insert"},params={"object"})
 	public String insertOne(Object object){
+		
 		return ToStringBuilder.reflectionToString(object);
 	}
 }

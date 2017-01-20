@@ -5,7 +5,7 @@ import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.example.config.MqConfigConstants;
 
 public class ProducerInstanceFactory {
-
+ 
 	private static DefaultMQProducer producer;
 
 	private static void bornProduce(){
@@ -18,7 +18,7 @@ public class ProducerInstanceFactory {
 		//producer.setRetryTimesWhenSendFailed(retryTimesWhenSendFailed);
 		//producer.setSendMsgTimeout(sendMsgTimeout);
 		//producer.setRetryAnotherBrokerWhenNotStoreOK(retryAnotherBrokerWhenNotStoreOK);
-		
+		 
 		try {
 			producer.start();
 		} catch (MQClientException e) {
