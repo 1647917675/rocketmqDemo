@@ -55,7 +55,7 @@ public class ProducerController {
 		return "hello";
 	}
 	
-	@RequestMapping(path={"/insertOne"},params={"object"})
+	@RequestMapping(path={"/insert"},params={"object"})
 	public String insertOne(Object object){
 		return ToStringBuilder.reflectionToString(object);
 	}
